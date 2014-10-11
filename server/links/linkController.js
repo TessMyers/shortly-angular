@@ -33,6 +33,8 @@ module.exports = {
   },
 
   newLink: function (req, res, next) {
+
+    console.log("newLink called ln 36 linkController");
     var url = req.body.url;
     console.log(req.body);
     if (!util.isValidUrl(url)) {

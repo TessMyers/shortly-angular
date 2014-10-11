@@ -4,6 +4,7 @@ describe('Routing', function () {
 
   beforeEach(inject(function($injector){
     $route = $injector.get('$route');
+    //console.log("ROUTE", $route.routes['/links'])
   }));
 
   it('Should have /signup route, template, and controller', function () {
