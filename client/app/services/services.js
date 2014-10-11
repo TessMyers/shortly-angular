@@ -19,7 +19,6 @@ angular.module('shortly.services', [])
       data: data
     })
     .then(function (resp) {
-      console.log('RESPONSE HOOORAY');
     });
   }
 

@@ -7,9 +7,13 @@ angular.module('shortly', [
 ])
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
+
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
-      controller: 'AuthController'
+      controller: 'AuthController',
+    })
+    .when('/', {
+      redirectTo: '/signin'
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
@@ -54,6 +58,7 @@ angular.module('shortly', [
   // if it's not valid, we then redirect back to signin/signup
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
     if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
+      console.log("About to change location")
       $location.path('/signin');
     }
   });

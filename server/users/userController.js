@@ -54,6 +54,7 @@ module.exports = {
       })
       .then(function (user) {
         // create token to send back for auth
+        console.log("Giving token", user)
         var token = jwt.encode(user, 'secret');
         res.json({token: token});
       })

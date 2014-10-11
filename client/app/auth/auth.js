@@ -24,6 +24,7 @@ angular.module('shortly.auth', [])
         $location.path('/links');
       })
       .catch(function (error) {
+        console.log("actually usefull error: token!", token)
         console.error(error);
       });
   };
