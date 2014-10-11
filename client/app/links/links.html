@@ -1,5 +1,23 @@
 <div id='container'>
   <div ng-controller='LinksController'></div>
   <h3>The Links!</h3>
-  <input></input>
+<ul>
+  <li ng-repeat="stuff in data.links[0]"  class="link">
+    <div class="title">
+      {{ stuff.title }}
+    </div>
+    <div class="visits">
+      Visits: {{stuff.visits}}
+    </div>
+    <a ng-href="{{ stuff.base_url }}/{{ stuff.code }}">
+      {{ stuff.base_url }}/{{ stuff.code }}
+    </a>
+  </li>
+</ul>
+
+  <h4>
+    <a class="link" href="#/shorten">
+      Shorten more links
+    </a>
+  </h4>
 </div>
